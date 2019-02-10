@@ -32,7 +32,7 @@ functions:
             - s3:ObjectCreated:*
           rules:
             - prefix: clean/
-            - suffix: .csv
+            - suffix: .csv.gz
 
 plugins:
   - serverless-prune-plugin
