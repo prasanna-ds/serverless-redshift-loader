@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS immobilienscout24_berlin.flats (
+  listing_id                                    INTEGER         ENCODE DELTA32K NOT NULL,
+  publishDate                                   TIMESTAMP       ENCODE DELTA32K,
+  realEstate_apartmentType                      VARCHAR(100)    ENCODE LZO,
+  realEstate_assistedLiving                     BOOLEAN         ENCODE ZSTD,
+  realEstate_balcony                            BOOLEAN         ENCODE ZSTD,
+  realEstate_baseRent                           DOUBLE PRECISION,
+  realEstate_builtInKitchen                     BOOLEAN         ENCODE ZSTD,
+  realEstate_calculatedTotalRent                DOUBLE PRECISION,   
+  realEstate_calculatedTotalRentScope           VARCHAR(10)     ENCODE LZO,
+  realEstate_cellar                             VARCHAR(10)     ENCODE LZO,
+  realEstate_certificateOfEligibilityNeeded     BOOLEAN         ENCODE ZSTD,
+  realEstate_condition                          VARCHAR(10)     ENCODE LZO,
+  realEstate_constructionYear                   VARCHAR(4)     ENCODE LZO,    
+  realEstate_deposit                            VARCHAR(10)     ENCODE LZO,
+  realEstate_descriptionNote                    VARCHAR(10)     ENCODE LZO,
+  realEstate_floor                              INTEGER         ENCODE LZO,
+  realEstate_freeFrom                           VARCHAR(10)     ENCODE LZO,
+  realEstate_garden                             BOOLEAN         ENCODE ZSTD,
+  realEstate_guestToilet                        VARCHAR(10)     ENCODE LZO
+  realEstate_handicappedAccessible              VARCHAR(10)     ENCODE LZO,    
+  realEstate_heatingCosts                       DOUBLE PRECISION,
+  realEstate_heatingCostsInServiceCharge        VARCHAR(10)     ENCODE LZO,
+  realEstate_heatingType                        VARCHAR(10)     ENCODE LZO,
+  realEstate_interiorQuality                    VARCHAR(10)     ENCODE LZO,
+  realEstate_lastModificationDate               TIMESTAMP       ENCODE DELTA32K,
+  realEstate_lastRefurbishment                  VARCHAR(10)     ENCODE LZO,    
+  realEstate_lift                               BOOLEAN         ENCODE ZSTD,
+  realEstate_livingSpace                        DOUBLE PRECISION,
+  realEstate_numberOfFloors                     INTEGER         ENCODE LZO,
+  realEstate_petsAllowed                        VARCHAR(10)     ENCODE LZO,
+  realEstate_serviceCharge                      VARCHAR(10)     ENCODE LZO,    
+  realEstate_state                              VARCHAR(10)     ENCODE LZO,
+  realEstate_totalRent                          DOUBLE PRECISION
+  PRIMARY KEY(listing_id)
+)
+DISTKEY (listing_id);
