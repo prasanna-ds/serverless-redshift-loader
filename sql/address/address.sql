@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS immobilienscout24_berlin.address (
   realEstate_address_geoHierarchy_quarter_name  VARCHAR(100)  ENCODE LZO,
   realEstate_address_geoHierarchy_region_name   VARCHAR(50)   ENCODE LZO,
   realEstate_address_postcode                   VARCHAR(10)   ENCODE LZO
-  PRIMARY KEY(listing_id)
+  PRIMARY KEY(address_id)
 )
-DISTKEY (listing_id);
+DISTKEY (address_id);
